@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Aditi Institute of Surshadnalay</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+                        <div class="logos">
+                <img src="images/Aditi.png" alt="Aditi Institute of Surshadnalay logo" class="nav-logo" />
+                <div class="logo">
+                    <div class="logo-text-1">Aditi Institute of Surshadnalay</div>
+                    <div class="logo-text-2">Music Academy</div>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Begin Your Musical Journey</h1>
+            <p>Register with Aditi Institute of Surshadnalay Today</p>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="container">
+        <div class="form-container">
+            <h2>Enrollment Form</h2>
+            <form id="registrationForm" onsubmit="handleSubmit(event)">
+                <!-- Personal Information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <div class="form-group">
+                        <label for="fullname">Full Name *</label>
+                        <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="father_name">Father's Name *</label>
+                        <input type="text" id="father_name" name="father_name" required placeholder="Enter your father's name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mother_name">Mother's Name *</label>
+                        <input type="text" id="mother_name" name="mother_name" required placeholder="Enter your mother's name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <input type="text" id="address" name="address" required placeholder="Enter your address">
+                    </div> 
+
+                     <div class="form-group">
+                        <label for="aadhaar">Aadhaar No. *</label>
+                        <input type="text" id="aadhaar" name="aadhaar" required placeholder="Enter your aadhaar">
+                    </div>  
+
+                    <div class="form-group">
+                        <label for="date_of_birth">Date of Birth *</label>
+                        <input type="date" id="date_of_birth" name="date_of_birth" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education">Education *</label>
+                        <input type="text" id="education" name="education" required placeholder="Enter your education level">
+                    </div>  
+
+                     <div class="form-group">
+                        <label for="school_college">Name of School/ College *</label>
+                        <input type="text" id="school_college" name="school_college" minlength="4" maxlength="100" required placeholder="Enter your school/ college">
+                    </div>  
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" name="city" required placeholder="Your city">
+                    </div>
+                </fieldset> 
+
+                <!--Contact Details--> 
+
+                <fieldset>
+                    <legend>Contact Information</legend>
+
+                    <div class="form-group">
+                        <label for="mobile_no">Applicant's Mobile No *</label>
+                        <input type="text" id="mobile_no" name="mobile_no" required placeholder="Your mobile no">
+                    </div>
+                </fieldset>
+                <!-- Course Selection -->
+                <fieldset>
+                    <legend>Course Selection</legend>
+
+                    <div class="form-group">
+                        <label for="course">Select Course *</label>
+                        <select id="course" name="course" required>
+                            <option value="" disabled selected hidden>Choose a course</option>
+                            <option value="vocal">Hindustani Classical Vocal</option>
+                            <option value="sitar"> Sitar & String Instruments</option>
+                            <option value="guitar">Guitar Basics & Advance</option>
+                            <option value="tabla">Tabla, Cajon & Clap Box</option>
+                            <option value="piano">Piano & Keyboard</option>
+                            <option value="dance">Classical & Hip hop Training</option>
+                            <option value="acting">Acting Theory & Notation</option>
+                            <option value="drums">Drums & Percussion</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="level">Experience Level *</label>
+                        <select id="level" name="level" required>
+                            <option value="" disabled selected hidden>Select your level</option>
+                            <option value="beginner">Beginner (No prior experience)</option>
+                            <option value="intermediate">Intermediate (Some experience)</option>
+                            <option value="advanced">Advanced (Considerable experience)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="schedule">Preferred Timing *</label>
+                        <select id="schedule" name="schedule" required>
+                            <option value="" disabled selected hidden>Select preferred timing</option>
+                            <option value="morning">Morning (10:00 AM - 12:00 PM)</option>
+                            <option value="afternoon">Afternoon (2:00 PM - 4:00 PM)</option>
+                            <option value="evening">Evening (4:00 PM - 6:00 PM)</option>
+                            <option value="flexible">Flexible (To be decided)</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Additional Information -->
+                <fieldset>
+                    <legend>Additional Information</legend>
+
+                    <div class="form-group">
+                        <label for="motivation">Why do you want to learn music? *</label>
+                        <textarea id="motivation" name="motivation" required placeholder="Tell us about your musical interests and goals..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reference">How did you know about us?</label>
+                        <select id="reference" name="reference">
+                            <option value="">Select</option>
+                            <option value="friend">Friend/Family Referral</option>
+                            <option value="social">Social Media</option>
+                            <option value="website">Website</option>
+                            <option value="advertisement">Advertisement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the terms and conditions of Aditi Institute *</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="form-submit">Complete Registration</button>
+                <p>
+                    All fields marked with * are required
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Registration Info -->
+    <section class="container">
+        <h2 class="section-title">Registration Information</h2>
+        <div class="grid-container grid-3">
+            <div class="info-box">
+                <div class="info-icon">✅</div>
+                <h3>Easy Registration</h3>
+                <p>Simple and quick registration process. Complete your enrollment in just a few steps.</p>
+            </div>
+            <div class="info-box">
+                <div class="info-icon">🎵</div>
+                <h3>Flexible Courses</h3>
+                <p>Choose from multiple courses and flexible schedules that fit your lifestyle and musical interests.</p>
+            </div>
+            <div class="info-box">
+                <div class="info-icon">💰</div>
+                <h3>Affordable Fees</h3>
+                <p>Competitive pricing with flexible payment options and scholarship opportunities for talented students.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="container">
+        <h2 class="section-title">What Happens Next?</h2>
+        <div class="grid-container grid-4">
+            <div class="card">
+                <h3>1️⃣ Submission</h3>
+                <p>Submit your registration form with all required information.</p>
+            </div>
+            <div class="card">
+                <h3>2️⃣ Confirmation</h3>
+                <p>We'll contact you within 24 hours to confirm your enrolment and discuss your requirements.</p>
+            </div>
+            <div class="card">
+                <h3>3️⃣ Assessment</h3>
+                <p>A brief assessment session with your assigned teacher to understand your level and goals.</p>
+            </div>
+            <div class="card">
+                <h3>4️⃣ Start Learning</h3>
+                <p>Begin your personalized training sessions at your preferred schedule and pace.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 <a href="tel:+919002614164">+91 90026 14164</a></p>
+                <p>✉️ <a href="mailto:institute.aditi@gmail.com">institute.aditi@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Address</h3>
+                    <p> Baluchar, vill. Guljarbag , P.O. Jiagang , P.S. Jiaganj <br>
+                     Dist: Murshidabad , West Bengal<br>
+                     Pincode: 742123<br>
+                    <br>
+                   <a href="https://maps.app.goo.gl/dd89khhMSB8v2PuB8" target="_blank">📍 View on Google Maps</a>
+                    </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="courses.html">Courses</a></p>
+                <p><a href="register.html">Register</a></p>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+                <div class="footer-bottom">
+            <div class="footer-brand">
+                <img src="images/Tatwamasi%20Foundation.png" alt="Tatwamasi Foundation logo" />
+                <p class="footer-brand-name">Tatwamasi Foundation</p>
+            </div>
+            <div class="footer-text">
+                <p>© 2023 Aditi Institute of Surshadnalay. All rights reserved.</p>
+                <p>A division of Tatwamasi Foundation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(document.getElementById('registrationForm'));
+            const data = Object.fromEntries(formData);
+            
+            // Display success message
+            alert(`Thank you for registering, ${data.fullname}!\n\nWe will contact you at ${data.phone} or ${data.email} within 24 hours to confirm your enrollment.\n\nWelcome to Aditi Institute of Surshadnalay!`);
+            
+            // Reset form
+            document.getElementById('registrationForm').reset();
+        }
+    </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
