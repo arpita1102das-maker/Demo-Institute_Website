@@ -4,41 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditi Institute of Surshadnalay - Music Academy</title>
+    <title>Aditi Institute of Sursadhanolay - Music Academy</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-                        <div class="logos">
-                <img src="images/Aditi.png" alt="Aditi Institute of Surshadnalay logo" class="nav-logo" />
-                <div class="logo">
-                    <div class="logo-text-1">Aditi Institute of Surshadnalay</div>
-                    <div class="logo-text-2">Music Academy</div>
-                </div>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="teachers.html">Teachers</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="site-header"></div>
 
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to Aditi Institute of Surshadnalay</h1>
+            <h1>Welcome to Aditi Institute of Sursadhanolay</h1>
             <p>Discover the Art of Classical Music in Modern Times</p>
             <a href="register.html" class="cta-button primary">Register Now</a>
             <a href="courses.html" class="cta-button">Explore Courses</a>
@@ -53,19 +29,19 @@
             <div class="info-box">
                 <div class="info-icon">🕐</div>
                 <h3>Opening Time</h3>
-                <p>Monday – Saturday<br><strong>10:00 AM</strong></p>
+                <p>Friday – Sunday<br><strong>11:00 AM</strong></p>
             </div>
 
             <div class="info-box">
                 <div class="info-icon">🕕</div>
                 <h3>Closing Time</h3>
-                <p>Monday – Saturday<br><strong>8:00 PM</strong></p>
+                <p>Friday – Sunday<br><strong>8:00 PM</strong></p>
             </div>
 
             <div class="info-box">
                 <div class="info-icon">📅</div>
                 <h3>Holiday</h3>
-                <p>Sunday & Public Holidays<br><strong>Closed</strong></p>
+                <p>Public Holidays<br><strong>Closed</strong></p>
             </div>
         </div>
     </section>
@@ -131,69 +107,40 @@
 
         <div class="grid-container grid-3">
             <div class="card">
-                <h3>🎵 Annual Music Concert</h3>
-                <p><strong>Date:</strong> April 15, 2026</p>
-                <p><strong>Time:</strong> 6:00 PM onwards</p>
-                <p>Evening of performances by students and faculty.</p>
+                <h3>🎵 Aagomony Celebration</h3>
+                <p><strong>Date:</strong> October, 2026</p>
+                <p><strong>Time:</strong> 11:00 AM onwards</p>
+                <p>Evening of performances by students and faculty Members.</p>
             </div>
         </div>
     </section>
 
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>📞 <a href="tel:+919002614164">+91 90026 14164</a></p>
-                <p>✉️ <a href="mailto:institute.aditi@gmail.com">institute.aditi@gmail.com</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Address</h3>
-                    <p> Baluchar, vill. Guljarbag , P.O. Jiagang , P.S. Jiaganj <br>
-                     Dist: Murshidabad , West Bengal<br>
-                     Pincode: 742123<br>
-                    <br>
-                   <a href="https://maps.app.goo.gl/dd89khhMSB8v2PuB8" target="_blank">📍 View on Google Maps</a>
-                    </p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <p><a href="about.html">About Us</a></p>
-                <p><a href="courses.html">Courses</a></p>
-                <p><a href="register.html">Register</a></p>
-            </div>
-        </div>
-        <div class="footer-divider"></div>
-                <div class="footer-bottom">
-            <div class="footer-brand">
-                <img src="images/Tatwamasi%20Foundation.png" alt="Tatwamasi Foundation logo" />
-                <p class="footer-brand-name">Tatwamasi Foundation</p>
-            </div>
-            <div class="footer-text">
-                <p>© 2023 Aditi Institute of Surshadnalay. All rights reserved.</p>
-                <p>A division of Tatwamasi Foundation</p>
-            </div>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        
+    (async function(){
+      const hdr = await fetch('includes/header.html').then(r=>r.text());
+      document.getElementById('site-header').innerHTML = hdr;
+      const ftr = await fetch('includes/footer.html').then(r=>r.text());
+      document.getElementById('site-footer').innerHTML = ftr;
+
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      if(hamburger && navLinks){
         hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+          hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
         });
-        
-        // Close menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
-            });
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
         });
+      }
+    })();
     </script>
 </body> 
 
